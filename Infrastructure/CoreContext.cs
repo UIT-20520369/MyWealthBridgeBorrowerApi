@@ -14,7 +14,6 @@ namespace Infrastructure
     public class CoreContext: DbContext
     {
         public CoreContext(DbContextOptions<CoreContext> options):base(options) {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
         public DbSet<Borrower> Borrowers { get; set; }
         public DbSet<ExternalLogin> ExternalLogins { get; set; }

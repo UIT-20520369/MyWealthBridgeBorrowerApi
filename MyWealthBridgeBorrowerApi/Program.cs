@@ -6,7 +6,8 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<CoreContext>(options => options.UseNpgsql("name=ConnectionStrings:DefaultConnection"));
+//builder.Services.AddDbContext<CoreContext>(options => options.UseNpgsql("name=ConnectionStrings:DefaultConnection"));
+builder.Services.AddDbContext<CoreContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 builder.Services.AddInfrastructureServices();
 builder.Services.AddServicesDI();
 builder.Services.AddAuthentication(options =>
